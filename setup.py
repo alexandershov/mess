@@ -11,7 +11,7 @@ setup(
     url='https://github.com/alexandershov/mess',
     keywords=['utilities', 'iterators'],
     classifiers=[
-        'Programming Language :: Python :: 2.7'
+        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4'
     ],
 )
