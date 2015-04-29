@@ -11,3 +11,7 @@ def test_pairs_empty():
 
 def test_pairs_not_enough_items():
     assert list(iters.pairs([1])) == []
+
+
+def test_lines():
+    assert list(iters.lines(['a\n', 'b\n', 'c'])) == ['a', 'b', 'c']

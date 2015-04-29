@@ -15,7 +15,13 @@ Usage
 .. code-block:: pycon
 
    >>> from mess import iters
+   # iterate by pairs
    >>> list(iters.pairs([1, 2, 3, 4]))
    [(1, 2), (2, 3), (3, 4)]
+
+   # iterate by lines (with stripped trailing newline)
+   >>> list(iters.lines(['a\n', 'b\n', 'c']))
+   ['a', 'b', 'c']
+
 
 
