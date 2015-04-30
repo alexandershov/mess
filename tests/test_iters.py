@@ -15,3 +15,15 @@ def test_pairs_not_enough_items():
 
 def test_lines():
     assert list(iters.lines(['a\n', 'b\n', 'c'])) == ['a', 'b', 'c']
+
+
+def test_length():
+    assert iters.length(iter([0, 1])) == 2
+
+
+def test_length_empty():
+    assert iters.length(iter([])) == 0
+
+
+def test_length_list():
+    assert iters.length([0, 1]) == 2

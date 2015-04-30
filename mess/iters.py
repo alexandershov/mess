@@ -29,3 +29,20 @@ def lines(strings):
     """
     for s in strings:
         yield s.rstrip('\n')
+
+
+def length(iterable):
+    """
+    Return number of items in the iterable.
+    Attention: this function consumes the whole iterable and
+    can never return if iterable has infinite number of items.
+    :Example:
+    >>> length(iter([0, 1]))
+    2
+    >>> length([0, 1, 2])
+    3
+    """
+    try:
+        return len(iterable)
+    except TypeError:
+        return sum(1 for item in iterable)
