@@ -26,7 +26,7 @@ def lines(strings):
 
     :Example:
 
-    >>> list(lines(['a\n', 'b\n', 'c']))
+    >>> list(lines(['a\\n', 'b\\n', 'c']))
     ['a', 'b', 'c']
     """
     for s in strings:
@@ -62,7 +62,7 @@ def groupby(iterable, key=None):
       returns the element unchanged.
 
     :Example:
-    >>> dict(groupby([0, 1, 2, 3], key=lambda x: x % 2 == 0)
+    >>> dict(groupby([0, 1, 2, 3], key=lambda x: x % 2 == 0))
     {True: [0, 2], False: [0, 1]}
     """
     groups = defaultdict(list)
