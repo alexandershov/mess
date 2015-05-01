@@ -27,3 +27,12 @@ def test_length_empty():
 
 def test_length_list():
     assert iters.length([0, 1]) == 2
+
+
+def test_groupby():
+    assert (dict(iters.groupby([0, 1, 2, 3], key=lambda n: n % 2 == 0))
+            == {True: [0, 2], False: [1, 3]})
+
+
+def test_groupby_no_key():
+    assert dict(iters.groupby([0, 1, 1, 0, 1])) == {0: [0, 0], 1: [1, 1, 1]}
