@@ -1,8 +1,9 @@
-from collections import defaultdict
 import itertools
 
 from six.moves import zip
 import six
+
+from mess import dicts
 
 
 def pairs(iterable):
@@ -50,7 +51,6 @@ def length(iterable):
         return sum(1 for item in iterable)
 
 
-# TODO: add a variant of this function: groupby_as_dict that returns a dictionary
 def groupby(iterable, key=None):
     """
     Make an iterator that returns keys and groups (items having the same key) from the iterable.
@@ -63,13 +63,6 @@ def groupby(iterable, key=None):
 
     :Example:
     >>> dict(groupby([0, 1, 2, 3], key=lambda x: x % 2 == 0))
-    {True: [0, 2], False: [0, 1]}
+    {True: [0, 2], False: [1, 3]}
     """
-    groups = defaultdict(list)
-    for item in iterable:
-        if key is None:
-            key_value = item
-        else:
-            key_value = key(item)
-        groups[key_value].append(item)
-    return six.viewitems(groups)
+    return six.viewitems(dicts.groupby(iterable, key))
